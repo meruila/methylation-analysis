@@ -1,0 +1,26 @@
+USAGE: bismark [options] <genome_folder> {-1 <mates1> -2 <mates2> | 
+<singles>} 
+  
+ARGUMENTS: 
+ 
+<genome_folder> The full path to the folder containing the unmodified reference genome    as well as the subfolders created by the bismark_genome_preparation script (/Bisulfite_Genome/CT_conversion/ and 
+Bisulfite_Genome/GA_conversion/). Bismark expects one or more FastA 
+files in this folder (file extension: .fa or .fasta). The path to the genome folder 
+can be relative or absolute. The path may also be set as '--genome_folder 
+/path/to/genome/folder/'.  
+-1 <mates1>  Comma-separated list of files containing the #1 mates (filename usually
+  includes "_1"), e.g. flyA_1.fq,flyB_1.fq). Sequences specified with this  
+  option must correspond file-for-file and read-for-read with those specified in
+  <mates2>. Reads may be a mix of different lengths. Bismark will produce
+  one mapping result and one report file per paired-end input file pair.   
+-2 <mates2>  Comma-separated list of files containing the #2 mates (filename usually
+  includes "_2"), e.g. flyA_2.fq,flyB_2.fq). Sequences specified with this  
+  option must correspond file-for-file and read-for-read with those specified in
+  <mates1>. Reads may be a mix of different lengths.
+//////////////////////////////////////////
+
+A typical command for a paired-end file could look like this:  
+bismark_methylation_extractor -p --no_overlap --report s_1_sequence_bismark_pe.sam
+
+///////////////////////////////////
+Generate ng static html save as pdf
